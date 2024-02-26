@@ -1,0 +1,25 @@
+[tool.poetry]
+name = "ladybug"
+version = "0.1.0"
+description = "Coccinella ERP - Back-end"
+authors = ["Kevin Mian Kraiker <kevin.mian@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Django = "^5.0.2"
+
+[tool.poetry.dev-dependencies]
+flakeheaven = "^2.0.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.flakeheaven]
+base = "https://raw.githubusercontent.com/flakeheaven/flakeheaven/master/pyproject.toml"
+max_line_length = 120
+show_source = true
+
+[tool.flakeheaven.plugins]
+pycodestyle = ["+*", "-W503"]

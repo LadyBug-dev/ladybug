@@ -1,0 +1,16 @@
+.env.local
+.env.*.local
+.venv/
+
+node_modules/
+
+__pycache__/
+*.py[cod]
+*.so
+bin/
+build/
+develop-eggs/
+dist/
+eggs/
+*.egg-info/
+*.egg

@@ -1,0 +1,4 @@
+{
+    "flake8.path": ["${workspaceFolder}/.venv/bin/flake8heavened"],
+    "flake8.interpreter": ["${workspaceFolder}/.venv/bin/python"]
+}
