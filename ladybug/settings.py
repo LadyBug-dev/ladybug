@@ -27,7 +27,7 @@ if READ_DOT_ENV_FILE:
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('DJANGO_SECRET_KEY', default='django-insecure-fu9&qn+-nzorq9iq+xs3t#8bwy)o1qdz4m$9_)*ec9yv8-bxlu')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False or env('DJANGO_DEBUG')
+DEBUG = False or env('DJANGO_DEBUG', default=False)
 
 ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1', 'localhost'])
 
@@ -35,6 +35,7 @@ ALLOWED_HOSTS = env.list('DJANGO_ALLOWED_HOSTS', default=['127.0.0.1', 'localhos
 # Application definition
 
 INSTALLED_APPS = [
+    'coccinella.apps.CoccinellaConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
