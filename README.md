@@ -16,3 +16,10 @@ Stack Python + Django para ERP básico da Dona Joaninha
 - [Flake8](https://flake8.pycqa.org/en/latest/) (especificamente [flakeheaven](https://flakeheaven.readthedocs.io/en/latest/index.html)) [configurado e funcionando](https://flakeheaven.readthedocs.io/en/latest/ide.html)
 - Princípios de [clean-code](https://en.wiktionary.org/wiki/clean_code)
 - Princípios [SOLID](https://pt.wikipedia.org/wiki/SOLID) (recomendado estudar mais a fundo - principalmente para identificar onde/o quê e como se aplica em Python+Django)
+
+
+
+
+
+
+:) aceita me push kevin
