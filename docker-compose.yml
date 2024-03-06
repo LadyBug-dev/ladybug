@@ -10,24 +10,16 @@ volumes:
     name: ${COMPOSE_PROJECT_NAME}_app_home_dir
 
 services:
-  app:
+  webserver:
     build:
       context: .docker
       dockerfile: dev.Dockerfile
       args:
-        - USERID=${USERID}
-        - GROUPID=${GROUPID}
-        - USER_SHELL=${USER_SHELL}
         - USER_TERM=${TERM:-xterm-256color}
         - ZSHTHEME=${ZSH_THEME:-maran}
-        - PROJECT_PATH=/project
+        - PROJECT_PATH=/ladybug
     volumes:
-      - type: volume
-        source: app-home
-        target: /home/app
-        volume:
-          nocopy: false
-      - .:/project
+      - .:/ladybug
     env_file:
       - .docker/.env
     networks:
@@ -35,6 +27,29 @@ services:
     ports:
       - '8000:8000'
     command: /home/app/.local/bin/poetry run python manage.py runserver 0.0.0.0:8000
+    user: app
+    depends_on:
+      - db
+
+  app:
+    build:
+      context: .docker
+      dockerfile: dev.Dockerfile
+      args:
+        - USER_TERM=${TERM:-xterm-256color}
+        - ZSHTHEME=${ZSH_THEME:-maran}
+        - PROJECT_PATH=/ladybug
+    volumes:
+      - type: volume
+        source: app-home
+        target: /home/app
+        volume:
+          nocopy: false
+      - ${LOCAL_WORKSPACE_FOLDER:-./}:/ladybug
+    env_file:
+      - .docker/.env
+    networks:
+      - project
     user: app
     depends_on:
       - db
