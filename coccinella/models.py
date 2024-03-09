@@ -3,7 +3,6 @@ from django.utils.translation import gettext_lazy as _
 
 # TODO: discuss all relations' on_delete behaviour
 
-
 class StockItem(models.Model):
     class MeasureUnit(models.TextChoices): #TBD, maybe promote to a model by itself
         METER = 'm', _('Meter')
