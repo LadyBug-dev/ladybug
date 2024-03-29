@@ -1,10 +1,24 @@
 from django.contrib import admin
-from django.db import models
+from coccinella.models import *
+from unfold.admin import ModelAdmin
 
-admin.site.register(models.StockItem)
-admin.site.register(models.SourceItem)
-admin.site.register(models.SalesChannel)
-admin.site.register(models.Sale)
-admin.site.register(models.StockSale)
+@admin.register(StockItem)
+class StockItemAdmin(ModelAdmin):
+    pass
 
+@admin.register(SourceItem)
+class SourceItemAdmin(ModelAdmin):
+    pass
+
+@admin.register(SalesChannel)
+class SalesChannelAdmin(ModelAdmin):
+    pass
+
+@admin.register(Sale)
+class SaleAdmin(ModelAdmin):
+    pass
+
+@admin.register(StockSale)
+class StockSaleAdmin(ModelAdmin):
+    pass
 # Register your models here.

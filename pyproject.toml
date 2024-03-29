@@ -10,8 +10,10 @@ python = "^3.10"
 Django = "^5.0.2"
 django-environ = "^0.11.2"
 psycopg2-binary = "^2.9.9"
+django-unfold = "^0.21.1"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
+faker = "^24.4.0"
 flakeheaven = "^2.0.0"
 
 [build-system]
